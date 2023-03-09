@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="119.5" y="1042.5">Lab2.Application2.Models.Fir</node>
+    <node x="113.0" y="782.5">java.lang.Runnable</node>
+    <node x="269.5" y="758.5">Lab2.Application2.Views.Window</node>
+    <node x="91.0" y="1202.5">Lab2.Application2.Controller.Main</node>
+    <node x="181.0" y="-165.5">javax.swing.JFrame</node>
+    <node x="-198.0" y="686.5">java.util.Observable</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Lab2.Application2.Models.Fir" target="java.util.Observable" relationship="GENERALIZATION">
+      <point x="-55.5" y="-0.0" />
+      <point x="-78.0" y="1074.0" />
+      <point x="-0.0" y="127.5" />
+    </edge>
+    <edge source="Lab2.Application2.Models.Fir" target="Lab2.Application2.Views.Window" relationship="TO_ONE">
+      <point x="40.0" y="-31.5" />
+      <point x="215.0" y="1014.0" />
+      <point x="331.33333333333337" y="1014.0" />
+      <point x="-63.66666666666663" y="55.5" />
+    </edge>
+    <edge source="Lab2.Application2.Views.Window" target="javax.swing.JFrame" relationship="GENERALIZATION">
+      <point x="-40.0" y="-55.5" />
+      <point x="0.0" y="379.5" />
+    </edge>
+    <edge source="Lab2.Application2.Controller.Main" target="Lab2.Application2.Views.Window" relationship="CREATE">
+      <point x="0.0" y="-31.5" />
+      <point x="175.0" y="1174.0" />
+      <point x="455.0" y="1174.0" />
+      <point x="60.0" y="55.5" />
+    </edge>
+    <edge source="Lab2.Application2.Controller.Main" target="Lab2.Application2.Models.Fir" relationship="CREATE">
+      <point x="0.0" y="-31.5" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="Lab2.Application2.Models.Fir" target="java.lang.Runnable" relationship="REALIZATION">
+      <point x="0.0" y="-31.5" />
+      <point x="0.0" y="31.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.459366391184573" showDependencies="true" x="149.0" y="560.0" />
+  <SelectedNodes>
+    <node>java.util.Observable</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
