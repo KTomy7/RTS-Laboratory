@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>Lab3.Exercise3</OriginalElement>
+  <nodes>
+    <node x="-2066.0" y="-962.0">Lab3.Exercise3.ThreadGroupDemo</node>
+    <node x="-2048.5" y="-1107.4217728">Lab3.Exercise3.ThreadEx</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Lab3.Exercise3.ThreadGroupDemo" target="Lab3.Exercise3.ThreadEx" relationship="CREATE">
+      <point x="0.0" y="-31.5" />
+      <point x="0.0" y="56.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.1920928955078125" showDependencies="true" x="-1966.0" y="-999.4360128000001" />
+  <SelectedNodes>
+    <node>Lab3.Exercise3.ThreadEx</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

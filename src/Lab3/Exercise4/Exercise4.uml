@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>Lab3.Exercise4</OriginalElement>
+  <nodes>
+    <node x="100.25" y="136.0">Lab3.Exercise4.Main</node>
+    <node x="-161.0" y="-13.5">Lab3.Exercise4.ReadThread</node>
+    <node x="262.0" y="-14.0">Lab3.Exercise4.WriteThread</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Lab3.Exercise4.Main" target="Lab3.Exercise4.ReadThread" relationship="CREATE">
+      <point x="0.0" y="-31.5" />
+      <point x="185.75" y="30.0" />
+      <point x="127.5" y="0.0" />
+    </edge>
+    <edge source="Lab3.Exercise4.Main" target="Lab3.Exercise4.WriteThread" relationship="CREATE">
+      <point x="83.75" y="-31.5" />
+      <point x="-93.5" y="44.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.5" showDependencies="true" x="161.5" y="102.5" />
+  <SelectedNodes>
+    <node>Lab3.Exercise4.WriteThread</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
