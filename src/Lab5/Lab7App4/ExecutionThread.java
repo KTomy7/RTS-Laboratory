@@ -15,9 +15,10 @@ public class ExecutionThread extends Thread {
     }
 
     public void run() {
+
         System.out.println(this.getName() + " - STATE 1");
         try {
-            s.acquire(); // Acquire the semaphore
+            s.acquire(2); // Acquire the semaphore
             System.out.println(this.getName() + " - TRANSITION 1-2");
             System.out.println(this.getName() + " - STATE 2");
             int k = (int) Math.round(Math.random() * (activityMax - activityMin) + activityMax);
@@ -25,7 +26,7 @@ public class ExecutionThread extends Thread {
                 i++;
                 i--;
             }
-            s.release(); // Release the semaphore
+            s.release(2); // Release the semaphore
             System.out.println(this.getName() + " - STATE 3");
             Thread.sleep(sleep);
             System.out.println(this.getName() + " - STATE 4");

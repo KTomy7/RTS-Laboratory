@@ -25,7 +25,7 @@ public class ExecutionThread extends Thread {
             i--;
         }
         System.out.println(this.getName() + " - TRANSITION 1 - 2");
-        if (this.getName().equals("Thread-0")) {
+        if (this.lock1.tryLock()) {
             lock1.lock();
             try {
                 System.out.println(this.getName() + " - STATE 2");
@@ -52,8 +52,10 @@ public class ExecutionThread extends Thread {
             } catch (Exception e) {
 
             }
+
         }
-        if (this.getName().equals("Thread-1")) {
+
+        if (this.lock2.tryLock()) {
             lock2.lock();
             try {
                 System.out.println(this.getName() + " - STATE 2");
@@ -80,6 +82,7 @@ public class ExecutionThread extends Thread {
             } catch (Exception e) {
 
             }
+
         }
         System.out.println(this.getName() + " - STATE 4");
     }
