@@ -1,24 +1,25 @@
-package Lab7.App1.Semaphore;
+package Lab6.App1Lab7.Reentrant;
 
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.Semaphore;
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.locks.ReentrantLock;
 
-public class App1Semaphore extends Thread {
-    Semaphore monitor1, monitor2;
-    CountDownLatch latch;
+public class App1Reentrant extends Thread {
+    ReentrantLock monitor1, monitor2;
+    CyclicBarrier barrier;
     int[] activity_min, activity_max;
     int sleep;
 
     Thread t;
 
-    public App1Semaphore(Semaphore monitor1, Semaphore monitor2, int[] activity_min, int[] activity_max, int sleep, Thread t, CountDownLatch latch) {
+    public App1Reentrant(ReentrantLock monitor1, ReentrantLock monitor2, int[] activity_min, int[] activity_max, int sleep, Thread t, CyclicBarrier barrier) {
         this.monitor1 = monitor1;
         this.monitor2 = monitor2;
         this.activity_min = activity_min;
         this.activity_max = activity_max;
         this.sleep = sleep;
         this.t = t;
-        this.latch = latch;
+        this.barrier = barrier;
     }
 
     public void run() {
@@ -29,38 +30,37 @@ public class App1Semaphore extends Thread {
             i--;
         }
 
-        if(monitor1.tryAcquire(1))
-            try{
+        if (monitor1.tryLock()) {
+            try {
                 System.out.println(this.getName() + " - STATE 2");
                 k = (int) Math.round(Math.random() * (activity_max[1] - activity_min[1]) + activity_min[1]);
                 for (int i = 0; i < k * 100000; i++) {
                     i++;
                     i--;
                 }
+                if (monitor2.tryLock()) {
+                    System.out.println(this.getName() + " - STATE 3");
 
-                if(monitor2.tryAcquire(1))
                     try {
-                        System.out.println(this.getName() + " - STATE 3");
-                        Thread.sleep(sleep * 500L);
+                        Thread.sleep(sleep * 500);
                         System.out.println("Sleep" + sleep * 500);
-                    } catch (Exception e) {
+                    } catch (InterruptedException e) {
                         e.printStackTrace();
                     } finally {
-                        monitor2.release(1);
+                        monitor2.unlock();
                     }
-            } catch (Exception e1) {
-                e1.printStackTrace();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             } finally {
-                monitor1.release(1);
-            }
+                monitor1.unlock();
+            }}
 
         System.out.println(this.getName() + " - STATE 4");
 
-        latch.countDown();
-
         try {
-            latch.await();
-        } catch (InterruptedException e) {
+            barrier.await();
+        } catch (InterruptedException | BrokenBarrierException e) {
             throw new RuntimeException(e);
         }
     }

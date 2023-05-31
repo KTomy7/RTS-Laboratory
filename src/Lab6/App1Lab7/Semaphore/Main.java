@@ -1,4 +1,4 @@
-package Lab7.App1.Semaphore;
+package Lab6.App1Lab7.Semaphore;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Semaphore;

@@ -1,4 +1,4 @@
-package Lab7.App4;
+package Lab6.App4Lab7;
 
 import java.util.concurrent.Semaphore;
 

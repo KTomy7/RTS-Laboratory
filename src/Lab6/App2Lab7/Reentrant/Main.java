@@ -1,4 +1,4 @@
-package Lab7.App2.Reentrant;
+package Lab6.App2Lab7.Reentrant;
 
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.locks.ReentrantLock;

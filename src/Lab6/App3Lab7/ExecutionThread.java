@@ -1,4 +1,4 @@
-package Lab7.App3;
+package Lab6.App3Lab7;
 
 import java.util.concurrent.CountDownLatch;
 
